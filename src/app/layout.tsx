@@ -18,6 +18,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="manifest" href="/manifest.json" />
+        </head>
         <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
