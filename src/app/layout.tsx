@@ -26,8 +26,9 @@ export default function RootLayout({
         </head>
         <body>
           <NavBar />
-          <AddButton />
-          <div className="px-4 py-12">{children}</div>
+          <div className="px-4 py-12 md:flex md:justify-center">
+            <div className="md:p-24">{children}</div>
+          </div>
         </body>
       </html>
     </ClerkProvider>
