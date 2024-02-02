@@ -1,9 +1,8 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import NavBar from "@/components/NavBar";
+import AddButton from "@/components/AddButton";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +20,11 @@ export default function RootLayout({
         <head>
           <link rel="manifest" href="/manifest.json" />
         </head>
-        <body className={inter.className}>{children}</body>
+        <body>
+          <NavBar />
+          <AddButton />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
