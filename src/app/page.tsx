@@ -1,10 +1,8 @@
-import { turso } from "@/lib/turso";
+import { TestTable, db } from "@/lib/drizzle";
 import { UserButton, currentUser } from "@clerk/nextjs";
-import Image from "next/image";
 
 export default async function Home() {
-  const user = await currentUser();
-  const { rows } = await turso.execute("SELECT * FROM TestTable");
+  const user = await db.select().from(TestTable).all();
   console.log(user);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
