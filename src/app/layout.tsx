@@ -19,13 +19,15 @@ export default function RootLayout({
       <html lang="en">
         <head>
           <link rel="manifest" href="/manifest.json" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          />
         </head>
         <body>
           <NavBar />
           <AddButton />
-          <div className="px-4 py-12">
-          {children}
-          </div>
+          <div className="px-4 py-12">{children}</div>
         </body>
       </html>
     </ClerkProvider>
