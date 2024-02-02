@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import Link from "next/link";
 
 export default function AddButton() {
   return (
@@ -19,9 +20,15 @@ export default function AddButton() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="m-3">
-          <DropdownMenuItem className="text-lg">Create New Recipe</DropdownMenuItem>
+          <Link href="create-recipe">
+            <DropdownMenuItem className="text-lg">
+              Create New Recipe
+            </DropdownMenuItem>
+          </Link>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-lg">Create New List</DropdownMenuItem>
+          <DropdownMenuItem className="text-lg">
+            Create New List
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
