@@ -45,7 +45,11 @@ export default function CreateRecipeForm() {
             <FormItem>
               <FormLabel>Title</FormLabel>
               <FormControl>
-                <Input placeholder="Garlic soup" {...field} />
+                <Input
+                  className="h-12 text-md"
+                  placeholder="Garlic soup"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -58,7 +62,12 @@ export default function CreateRecipeForm() {
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Input placeholder="Delicous garlic soup made..." {...field} />
+                <Input
+                  className="h-12 text-md"
+                  placeholder="Delicous garlic soup made..."
+                  type="textarea"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -71,7 +80,12 @@ export default function CreateRecipeForm() {
             <FormItem>
               <FormLabel>Prep Time</FormLabel>
               <FormControl>
-                <Input type="number" placeholder="20" {...field} />
+                <Input
+                  className="h-12 text-md"
+                  type="number"
+                  placeholder="20"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
