@@ -23,7 +23,9 @@ export default function RootLayout({
         <body>
           <NavBar />
           <AddButton />
+          <div className="px-4 py-12">
           {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>

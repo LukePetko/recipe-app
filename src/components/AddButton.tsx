@@ -13,7 +13,7 @@ export default function AddButton() {
   return (
     <div className="fixed right-3 bottom-3">
       <DropdownMenu>
-        <DropdownMenuTrigger>
+        <DropdownMenuTrigger asChild>
           <Button className="rounded-full w-14 h-14 transition-all add-button">
             <Plus size={24} />
           </Button>
