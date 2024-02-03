@@ -14,6 +14,8 @@ export const recipes = sqliteTable("recipes", {
 	cookTime: integer("cook_time"),
 	totalTime: integer("total_time"),
 	servings: integer("servings"),
+	updatedAt: numeric("updated_at"),
+	createdAt: numeric("created_at"),
 });
 
 export const ingredients = sqliteTable("ingredients", {
@@ -51,6 +53,8 @@ export const lists = sqliteTable("lists", {
 	name: text("name").notNull(),
 	description: text("description"),
 	isShareable: numeric("is_shareable").notNull(),
+	createdAt: numeric("created_at"),
+	updatedAt: numeric("updated_at"),
 });
 
 export const recipeLists = sqliteTable("recipe_lists", {

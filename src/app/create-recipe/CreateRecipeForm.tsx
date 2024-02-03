@@ -9,7 +9,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,6 +16,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "react-feather";
+import { useRouter } from "next/navigation";
 
 type CreateRecipeFormProps = {
   createRecipe: (values: CreateRecipeSchemaType) => void;
@@ -42,14 +43,20 @@ export default function CreateRecipeForm({
   const [cookHours, setCookHours] = React.useState(0);
   const [cookMinutes, setCookMinutes] = React.useState(0);
 
+  const router = useRouter();
+
   const onSubmit = (values: CreateRecipeSchemaType) => {
-    console.log(values);
-    createRecipe(values);
+    console.log({ ...values, totalTime: values.prepTime + values.cookTime });
+    createRecipe({ ...values, totalTime: values.prepTime + values.cookTime });
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <div className="flex gap-2 items-center pt-2">
+          <ArrowLeft onClick={() => router.back()} size={28} />
+          <h1 className="text-3xl font-bold">Create Recipe</h1>
+        </div>
         <FormField
           control={form.control}
           name="title"
@@ -177,6 +184,7 @@ export default function CreateRecipeForm({
                   value={
                     (+form.watch("prepTime") + +form.watch("cookTime")) % 60
                   }
+                  onChange={(e) => console.log(e)}
                   unit="minutes"
                 />
               </div>
