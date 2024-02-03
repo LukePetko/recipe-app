@@ -7,7 +7,7 @@ import { eq } from "drizzle-orm";
 
 export const getRecipe = cache(
   async (id: string) => {
-    const row = await db.select().from(recipes).where(eq(recipes.id, id));
+    const row = await db.select().from(recipes).where(eq(recipes.id, +id));
     return row;
   },
   ["recipe"],
