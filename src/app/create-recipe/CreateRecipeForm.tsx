@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "react-feather";
 import { useRouter } from "next/navigation";
+import { Textarea } from "@/components/ui/textarea";
 
 type CreateRecipeFormProps = {
   createRecipe: (values: CreateRecipeSchemaType) => void;
@@ -81,10 +82,9 @@ export default function CreateRecipeForm({
             <FormItem>
               <FormLabel>Description</FormLabel>
               <FormControl>
-                <Input
+                <Textarea
                   className="h-12 text-md"
                   placeholder="Delicous garlic soup made..."
-                  type="textarea"
                   {...field}
                 />
               </FormControl>
@@ -93,7 +93,7 @@ export default function CreateRecipeForm({
           )}
         />
         <h2 className="text-2xl font-bold">Time</h2>
-        <div className="flex md:gap-8 gap-4 md:flex-row flex-col">
+        <div className="flex lg:gap-8 gap-4 lg:flex-row flex-col">
           <FormItem>
             <FormLabel>Prep Time</FormLabel>
             <FormControl>
@@ -210,7 +210,9 @@ export default function CreateRecipeForm({
             </FormItem>
           )}
         />
-        <Button type="submit">Create Recipe</Button>
+        <Button className="w-full" type="submit">
+          Create Recipe
+        </Button>
       </form>
     </Form>
   );

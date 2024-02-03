@@ -26,8 +26,8 @@ export default function RootLayout({
         </head>
         <body>
           <NavBar />
-          <div className="px-4 pt-12 h-screen md:flex md:justify-center">
-            <div className="md:p-24">{children}</div>
+          <div className="px-4 pt-12 h-screen max-w-[830px] flex flex-col mx-auto">
+            {children}
           </div>
         </body>
       </html>
