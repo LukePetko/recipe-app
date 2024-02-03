@@ -50,7 +50,6 @@ export default function CreateRecipeForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <h1 className="text-3xl font-bold">Create Recipe</h1>
         <FormField
           control={form.control}
           name="title"

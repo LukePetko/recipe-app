@@ -7,6 +7,11 @@ const settings = {
   devIndicators: {
     autoPrerender: false,
   },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 module.exports =
